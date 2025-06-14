@@ -1,6 +1,6 @@
 <ng-container *ngIf="!(build | async)">
   <div class="w-100 d-flex justify-content-center">
-    <i class="fa fa-3x fa-spinner-third fa-spin"></i>
+    <i class="fa fa-3x fa-spinner fa-spin"></i>
   </div>
 </ng-container>
 <mat-card class="laforge-card" *ngIf="build | async as _build">
@@ -14,7 +14,7 @@
       </div>
       <div class="controls">
         <button mat-icon-button color="primary" aria-label="View the build progress" title="Build Progress" (click)="viewBuildProgress()">
-          <i class="fad fa-eye text-inherit"></i>
+          <i class="fas fa-eye text-inherit"></i>
         </button>
         <button
           mat-icon-button
@@ -25,7 +25,7 @@
           [disabled]="!canDeleteBuild()"
           [disableRipple]="!canDeleteBuild()"
         >
-          <i class="fad fa-bomb text-inherit"></i>
+          <i class="fas fa-bomb text-inherit"></i>
         </button>
         <button
           mat-icon-button
@@ -36,7 +36,7 @@
           [disabled]="!(selectionMode | async) && !canRebuildBuild()"
           [disableRipple]="!(selectionMode | async) && !canRebuildBuild()"
         >
-          <i class="fad fa-undo-alt text-inherit"></i>
+          <i class="fas fa-undo-alt text-inherit"></i>
         </button>
         <button
           mat-icon-button
@@ -47,7 +47,7 @@
           [disabled]="!canSelect()"
           [disableRipple]="!canSelect()"
         >
-          <i class="fad text-inherit" [ngClass]="(selectionMode | async) ? 'fa-times' : 'fa-check-square'"></i>
+          <i class="fas text-inherit" [ngClass]="(selectionMode | async) ? 'fa-times' : 'fa-check-square'"></i>
         </button>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <ng-container *ngIf="!(build | async)">
   <div class="w-100 d-flex justify-content-center">
-    <i class="fa fa-3x fa-spinner-third fa-spin"></i>
+    <i class="fa fa-3x fa-spinner fa-spin"></i>
   </div>
 </ng-container>
 <mat-card class="laforge-card mb-2 d-flex align-items-center justify-content-around">
@@ -53,7 +53,7 @@
         <mat-card-title class="d-flex align-items-center justify-content-between">
           <div>
             {{ _build.Environment.name }}
-            <i class="fad fa-1x fa-grip-lines-vertical text-muted mx-2"></i>
+            <i class="fas fa-1x fa-grip-lines-vertical text-muted mx-2"></i>
             v{{ _build.revision }}
             <span class="ml-2">
               (
@@ -81,7 +81,7 @@
           [disabled]="!canExecuteBuild() || executeBuildLoading"
           [disableRipple]="!canExecuteBuild() || executeBuildLoading"
         >
-          <i class="fad text-inherit" [ngClass]="'fa-' + (!executeBuildLoading ? 'rocket-launch' : 'spinner fa-spin')"></i>
+          <i class="fas text-inherit" [ngClass]="'fa-' + (!executeBuildLoading ? 'rocket-launch' : 'spinner fa-spin')"></i>
         </button>
       </div> -->
     </div>

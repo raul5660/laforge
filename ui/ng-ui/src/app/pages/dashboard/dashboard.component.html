@@ -6,7 +6,7 @@
       <mat-card-title>
         Environments
         <ng-container *ngIf="getEnvironmentsLoading | async">
-          <i class="fad fa-1x fa-spinner-third fa-spin ml-3"></i>
+          <i class="fas fa-1x fa-spinner fa-spin ml-3"></i>
         </ng-container>
       </mat-card-title>
       <!-- <mat-card-subtitle></mat-card-subtitle> -->
@@ -38,7 +38,7 @@
               <mat-header-cell *matHeaderCellDef class="justify-content-center">Plan</mat-header-cell>
               <mat-cell *matCellDef="let env" class="justify-content-center">
                 <button mat-flat-button (click)="createBuild(env.id)" color="primary">
-                  <i class="fad fa-rocket-launch text-light"></i>
+                  <i class="fas fa-rocket text-light"></i>
                 </button>
               </mat-cell>
             </ng-container>
@@ -88,7 +88,7 @@
         </mat-form-field>
         <button mat-raised-button color="primary" (click)="cloneEnvironmentFromGit()" class="submit-repo w-100">
           <ng-container *ngIf="gitIsLoading | async">
-            <i class="fad fa-spinner-third fa-spin text-white"></i>
+            <i class="fas fa-spinner fa-spin text-white"></i>
           </ng-container>
           <ng-container *ngIf="!(gitIsLoading | async)">Import</ng-container>
         </button>

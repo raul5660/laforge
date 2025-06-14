@@ -1,15 +1,18 @@
 FROM golang:1.21-bullseye
 
 RUN set -eux; \
-    apt-get update; \
+    apt-get update && \
     apt-get install -y --no-install-recommends \
     git \
-    xz-utils\
+    xz-utils \
+    python3 \
+    python3-pip \
     ; \
+    pip3 install --no-cache-dir awscli && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /
-ADD https://ziglang.org/builds/zig-linux-x86_64-0.14.0-dev.1860+2e2927735.tar.xz /zig.tar.xz
+ADD https://ziglang.org/download/0.14.0/zig-linux-x86_64-0.14.0.tar.xz /zig.tar.xz
 RUN mkdir /zig
 RUN tar -xvf /zig.tar.xz -C /zig --strip-components=1
 ENV PATH="/zig:${PATH}"

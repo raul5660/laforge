@@ -19,7 +19,7 @@
             {{ _title }}
             <ng-container *ngIf="subheaderDisplayDesc">
               <ng-container *ngIf="description$ | async as _description">
-                <i class="fad fa-grip-lines-vertical fa-1x mx-2 text-black"></i>
+                <i class="fas fa-grip-lines-vertical fa-1x mx-2 text-black"></i>
                 <small>{{ _description }}</small>
               </ng-container>
             </ng-container>
@@ -43,7 +43,7 @@
     <!--begin::Toolbar-->
     <div class="d-flex align-items-center">
       <ng-container *ngIf="showEnvDropdown$ | async">
-        <i class="fad fa-spinner-third fa-spin mr-2" *ngIf="(envIsLoading | async) || (buildIsLoading | async)"></i>
+        <i class="fas fa-spinner fa-spin mr-2" *ngIf="(envIsLoading | async) || (buildIsLoading | async)"></i>
         <mat-form-field appearance="fill" *ngIf="this.environments | async as _environments">
           <mat-label>Environments</mat-label>
           <mat-select

@@ -23,7 +23,7 @@
   </div>
   <div class="env-container" *ngIf="!(environments | async)">
     <div class="env env-loading">
-      <i class="fa fa-spinner-third fa-spin"></i>
+      <i class="fa fa-spinner fa-spin"></i>
     </div>
   </div>
   <ng-container *ngIf="environments | async as _environments">
@@ -95,7 +95,7 @@
           <div class="type">Controls</div>
         </div>
         <div *ngIf="!_buildCommits[environment.id]">
-          <i class="fad fa-spinner-third fa-spin"></i>
+          <i class="fas fa-spinner fa-spin"></i>
         </div>
         <ng-container *ngFor="let buildCommitGroup of groupBuildCommits(_buildCommits[environment.id])">
           <div class="build build-revision">
