@@ -51,9 +51,9 @@
         <mat-header-row *matHeaderRowDef="taskColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: taskColumns"></mat-row>
       </mat-table>
-      <ng-container *ngIf="task.error_message">
+      <ng-container *ngIf="task.errorMessage">
         <h4 class="text-danger">Error Message:</h4>
-        <pre class="pre-scrollable"><code>{{ task.error_message }}</code></pre>
+        <pre class="pre-scrollable"><code>{{ task.errorMessage }}</code></pre>
       </ng-container>
       <ng-container *ngIf="task.output">
         <h4 class="text-dark">Output:</h4>

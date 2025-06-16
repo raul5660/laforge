@@ -11,7 +11,7 @@
 </ng-container>
 
 <!--begin::Alerts-->
-<div class="navi navi-hover scroll my-4" data-scroll="true" style="position: relative; max-height: 300px" perfectScrollbar>
+<div class="navi navi-hover scroll my-4" data-scroll="true" style="position: relative; max-height: 300px" [perfectScrollbar]="{}">
   <ng-container *ngIf="tasks | async as _tasks">
     <!--begin::Empty-->
     <a *ngIf="_tasks.length === 0" class="navi-item" disabled aria-disabled="true">
@@ -37,7 +37,7 @@
           <div class="font-weight-bold">{{ getMessage(task) }}</div>
           <div class="text-muted">
             {{ task.endTime || task.startTime | dateAgo }}
-            <span *ngIf="task.end_time">, took {{ task.endTime | dateBetween: task.startTime }}</span>
+            <span *ngIf="task.endTime">, took {{ task.endTime | dateBetween: task.startTime }}</span>
           </div>
         </div>
       </div>
