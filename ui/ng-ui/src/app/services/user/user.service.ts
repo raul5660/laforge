@@ -15,7 +15,7 @@ export class UserService {
     // TODO: refresh user session with refreshToken
   }
 
-  public login(email: string, password: string): Observable<LaForgeAuthUser> {
+  public login(email: string, password: string): Observable<LaForgeAuthUser | boolean> {
     // TODO: Perform user auth
     // return Promise.reject({ message: 'Feature not implemented yet' });
     return this.authService.localLogin(email, password);

@@ -28,7 +28,11 @@ import { AuthService } from './modules/auth/_services/auth.service';
 function appInitializer(authService: AuthService) {
   return () => {
     return new Promise((resolve) => {
-      authService.getCurrentUserFromContext().subscribe().add(resolve);
+      authService.getCurrentUserFromContext().subscribe({
+        next: () => {},
+        error: () => {},
+        complete: () => resolve(true)
+      });
     });
   };
 }

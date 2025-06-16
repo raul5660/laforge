@@ -37,13 +37,13 @@ export class AuthService implements OnDestroy {
   }
 
   // public methods
-  localLogin(email: string, password: string): Observable<LaForgeAuthUser> {
+  localLogin(email: string, password: string): Observable<LaForgeAuthUser | boolean> {
     this.isLoadingSubject.next(true);
     return this.authHttpService.localLogin(email, password).pipe(
       map((auth: LaForgeAuthUser) => {
         if (auth.id) {
           this.currentUserSubject = new BehaviorSubject<LaForgeAuthUser>(auth);
-          return true;
+          return auth;
         } else return false;
       }),
       catchError((err) => {

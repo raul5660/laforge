@@ -4,9 +4,9 @@ COPY . .
 # Copy production environment file to the right location
 RUN mkdir -p src/environments
 COPY src/environments-docker/environment.prod.ts src/environments/
-# Angular 12 with Node 18 should work fine without legacy provider
-# But keeping it for safety with the webpack version
-ENV NODE_OPTIONS="--openssl-legacy-provider"
+# Angular 14 with Node 18 requires openssl-legacy-provider for some webpack versions
+# We'll keep this for compatibility with the current webpack configuration
+ENV NODE_OPTIONS="--openssl-legacy-provider --max-old-space-size=4096"
 # Clean any existing node_modules to prevent conflicts
 RUN rm -rf node_modules package-lock.json
 # Use legacy-peer-deps to bypass peer dependency issues

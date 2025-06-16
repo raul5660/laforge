@@ -12,7 +12,7 @@ if [ -f "$APOLLO_CLIENT_TYPES" ]; then
   echo "Patching Apollo Client types..."
   # Create a simplified version of the Apollo Client types file
   cat > "$APOLLO_CLIENT_TYPES" << 'EOL'
-/* Patched version of Apollo Client types to work with Angular 12 / TypeScript 4.3 */
+/* Patched version of Apollo Client types to work with Angular 15 / TypeScript 4.9 */
 export interface ExactType<T> extends T { __exact?: never; }
 export type Exact<T> = { [P in keyof T]: T[P] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: T[SubKey] };
@@ -25,6 +25,8 @@ export type Subtract<A, B> = Omit<A, keyof B> & {
 EOL
   echo "Apollo Client types replaced successfully."
 fi
+
+# For Angular 15, we keep the standard polyfills.ts file
 
 # This will run Angular build with production configuration
 node_modules/.bin/ng build --configuration production

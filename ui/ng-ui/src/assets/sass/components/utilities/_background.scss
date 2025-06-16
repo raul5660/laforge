@@ -67,7 +67,7 @@
 
 			&:hover {
 				transition: $transition;
-				background-color: rgba($value, $opacity * 20 / 100) !important;
+				background-color: rgba($value, calc($opacity * 20 / 100)) !important;
 			}
 		}
 	}

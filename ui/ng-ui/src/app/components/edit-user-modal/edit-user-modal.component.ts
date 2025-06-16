@@ -1,9 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { LaForgeProviderType, LaForgeRoleLevel } from '../../../generated/graphql';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSelectChange } from '@angular/material/select';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { LaForgeAuthUser, LaForgeRoleLevel, LaForgeProviderType } from '@graphql';
+import { LaForgeAuthUser } from '@graphql';
 import { ApiService } from '@services/api/api.service';
 import { BehaviorSubject } from 'rxjs';
 
@@ -126,8 +127,8 @@ export class EditUserModalComponent implements OnInit {
           phone: this.phone.value,
           company: this.company.value,
           occupation: this.occupation.value,
-          role: this.role.value,
-          provider: this.provider.value
+          role: this.role.value as LaForgeRoleLevel,
+          provider: this.provider.value as LaForgeProviderType
         })
         .then(
           () => {
@@ -147,8 +148,8 @@ export class EditUserModalComponent implements OnInit {
         .createUser({
           username: this.username.value,
           password: this.password.value,
-          role: this.role.value,
-          provider: this.provider.value
+          role: this.role.value as LaForgeRoleLevel,
+          provider: this.provider.value as LaForgeProviderType
         })
         .then(
           () => {
