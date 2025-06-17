@@ -19,11 +19,11 @@
               </a>
               )
             </span>
-            <mat-chip-list class="ml-3">
-              <mat-chip [color]="getCommitStateColor()" selected [selectable]="false">
+            <mat-chip-set class="ml-3">
+              <mat-chip [color]="getCommitStateColor()" selected [disabled]="true">
                 {{ getCommitStateText() }}
               </mat-chip>
-            </mat-chip-list>
+            </mat-chip-set>
           </mat-card-title>
         </div>
         <div class="controls">

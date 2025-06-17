@@ -9,18 +9,18 @@
         margin: $margin;
         height: $height;
         width: $width + $space;
-        border-radius: ($height/2);
+        border-radius: calc($height/2);
     }
 
     input:empty ~ span:before,
     input:empty ~ span:after {
         width: $width;
-        border-radius: ($height/2);
+        border-radius: calc($height/2);
     }
 
     input:empty ~ span:after {
-        height: $height - 2 * $space;
-        width: $height - 2 * $space;
+        height: calc($height - 2 * $space);
+        width: calc($height - 2 * $space);
         //line-height: $line-height;
         top: $space;
         bottom: $space;

@@ -4,9 +4,9 @@
       <ng-container *ngIf="user | async as _user">
         {{ _user.username }} <i *ngIf="_user.firstName || _user.lastName" class="fas fa-1x fa-grip-lines-vertical text-black mx-1"></i>
         <span class="text-muted">{{ _user.firstName }} {{ _user.lastName }}</span>
-        <mat-chip-list class="ml-3">
-          <mat-chip [color]="getRoleColor()" selected disableRipple>{{ _user.role }}</mat-chip>
-        </mat-chip-list>
+        <mat-chip-set class="ml-3">
+          <mat-chip [color]="getRoleColor()" selected [disabled]="true">{{ _user.role }}</mat-chip>
+        </mat-chip-set>
       </ng-container>
     </mat-card-title>
   </mat-card-header>
