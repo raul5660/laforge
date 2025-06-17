@@ -1,12 +1,12 @@
-FROM node:18 as builder
+FROM node:22 as builder
 WORKDIR /app
 COPY . .
 # Copy production environment file to the right location
 RUN mkdir -p src/environments
 COPY src/environments-docker/environment.prod.ts src/environments/
-# Angular 14 with Node 18 requires openssl-legacy-provider for some webpack versions
-# We'll keep this for compatibility with the current webpack configuration
-ENV NODE_OPTIONS="--openssl-legacy-provider --max-old-space-size=4096"
+# Configure Node options for Angular build
+# No need for --openssl-legacy-provider with Node 22 as it's not required
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 # Clean any existing node_modules to prevent conflicts
 RUN rm -rf node_modules package-lock.json
 # Use legacy-peer-deps to bypass peer dependency issues
