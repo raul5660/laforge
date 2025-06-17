@@ -25,7 +25,8 @@ export class BuildComponent implements OnInit, OnDestroy {
   planStatusesLoading = false;
   agentStatusesLoading = false;
   // viewTeams: BehaviorSubject<LaForgeGetBuildTreeQuery['build']['buildToTeam']>;
-  statusCountInterval: NodeJS.Timeout;
+  // Changed from NodeJS.Timeout for Angular 16 compatibility
+  statusCountInterval: ReturnType<typeof setTimeout>;
 
   constructor(
     private subheader: SubheaderService,

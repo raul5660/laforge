@@ -71,13 +71,22 @@ export class AuthService implements OnDestroy {
         if (user) {
           this.currentUserSubject = new BehaviorSubject<LaForgeAuthUser>(user);
         } else {
-          this.logout();
+          // Only attempt logout if we're not already on the login page
+          if (!this.router.url.includes('/auth/login')) {
+            this.logout();
+          }
         }
         return user;
       }),
       catchError((err) => {
-        console.warn('err', err);
-        this.router.navigate(['auth', 'login']);
+        console.warn('Authentication error:', err);
+        
+        // Only navigate to login if we're not already on login page to prevent redirect loops
+        // This is important for Angular 16 compatibility
+        if (!this.router.url.includes('/auth/login')) {
+          this.router.navigate(['auth', 'login']);
+        }
+        
         return of(undefined);
       }),
       finalize(() => this.isLoadingSubject.next(false))

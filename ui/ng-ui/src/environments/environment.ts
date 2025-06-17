@@ -9,7 +9,7 @@ export const environment = {
   isMockEnabled: true,
   apiUrl: 'api',
   graphqlUrl: '/api/query',
-  wsUrl: 'ws://localhost/api/query',
+  wsUrl: 'ws://' + location.host + '/api/query',
   isMockApi: false,
   authBaseUrl: '/auth'
 };

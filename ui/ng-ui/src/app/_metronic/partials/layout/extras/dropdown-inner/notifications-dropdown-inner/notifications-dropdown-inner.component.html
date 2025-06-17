@@ -11,7 +11,7 @@
 </ng-container>
 
 <!--begin::Alerts-->
-<div class="navi navi-hover scroll my-4" data-scroll="true" style="position: relative; max-height: 300px" [perfectScrollbar]="{}">
+<div class="navi navi-hover scroll my-4" data-scroll="true" style="position: relative; max-height: 300px; overflow-y: auto;"><!-- PerfectScrollbar replaced with CSS overflow for Angular 16 compatibility -->
   <ng-container *ngIf="tasks | async as _tasks">
     <!--begin::Empty-->
     <a *ngIf="_tasks.length === 0" class="navi-item" disabled aria-disabled="true">

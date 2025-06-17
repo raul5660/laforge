@@ -2,10 +2,9 @@
   <!--begin::Wrapper-->
   <div class="quick-search-wrapper pt-5">
     <div
-      [ngStyle]="{ 'max-height': '30vh', position: 'relative' }"
+      [ngStyle]="{ 'max-height': '30vh', position: 'relative', 'overflow-y': 'auto' }"
       class="scroll"
-      [perfectScrollbar]="{}"
-    >
+    ><!-- PerfectScrollbar replaced with CSS overflow for Angular 16 compatibility -->
       <div class="quick-search-result">
         <!-- Has Result -->
         <ng-container *ngIf="data.length > 0">

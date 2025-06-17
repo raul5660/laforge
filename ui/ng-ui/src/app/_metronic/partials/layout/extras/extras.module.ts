@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InlineSVGModule } from 'ng-inline-svg';
-import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
-import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+// PerfectScrollbar removed for Angular 16 compatibility - using CSS overflow instead
 import { SearchDropdownInnerComponent } from './dropdown-inner/search-dropdown-inner/search-dropdown-inner.component';
 import { NotificationsDropdownInnerComponent } from './dropdown-inner/notifications-dropdown-inner/notifications-dropdown-inner.component';
 import { QuickActionsDropdownInnerComponent } from './dropdown-inner/quick-actions-dropdown-inner/quick-actions-dropdown-inner.component';
@@ -21,9 +19,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LaforgePipesModule } from '../../../../pipes/pipes.module';
 import { MomentModule } from 'ngx-moment';
 
-const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true
-};
+// PerfectScrollbar config removed - using CSS overflow instead
 
 @NgModule({
   declarations: [
@@ -41,13 +37,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ScrollTopComponent,
     ToolbarComponent
   ],
-  imports: [CommonModule, InlineSVGModule, PerfectScrollbarModule, CoreModule, LaforgePipesModule, MomentModule],
-  providers: [
-    {
-      provide: PERFECT_SCROLLBAR_CONFIG,
-      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-    }
-  ],
+  imports: [CommonModule, InlineSVGModule, CoreModule, LaforgePipesModule, MomentModule],
+  providers: [],
   exports: [
     SearchDropdownInnerComponent,
     NotificationsDropdownInnerComponent,

@@ -16,6 +16,7 @@
     "lib": ["es2020", "dom", "esnext.asynciterable"],
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
+    "types": ["node"],
     "paths": {
       "@components/*": ["src/app/components/*"],
       "@models/*": ["src/app/models/*"],
