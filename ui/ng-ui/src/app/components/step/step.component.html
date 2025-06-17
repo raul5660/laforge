@@ -13,7 +13,7 @@
     </ng-container>
     <ng-container *ngIf="provisioningScheduledStep">
       <div class="step-preview mr-1">
-        [{{ provisioningScheduledStep.ScheduledStep.type }}] {{ provisioningScheduledStep.ScheduledStep.step }} @
+        [{{ provisioningScheduledStep.ScheduledStep.type }}] {{ provisioningScheduledStep.ScheduledStep.step }} &#64;
         {{ provisioningScheduledStep.runTime | date: 'short' }}
         <!-- <span class="step-stepname">{{ provisionedHost ? provisionedHost.host.hostname : '' }}</span> -->
       </div>

@@ -34,7 +34,7 @@
         </div>
         <div class="commit-hash">
           <a [href]="getLatestCommitLink(environment)" target="_blank" rel="noreferrer">
-            {{ environment.Repositories[0].branchName }}@{{ getLatestCommitHash(environment) }}
+            {{ environment.Repositories[0].branchName }}&#64;{{ getLatestCommitHash(environment) }}
           </a>
         </div>
         <div class="owner">{{ getLastCommitter(environment) }}</div>
@@ -138,7 +138,7 @@
                 {{ buildCommit.ServerTasks[0].startTime | dateAgo }}
                 <span *ngIf="buildCommit.ServerTasks[0].endTime">
                   , took
-                  {{ buildCommit.ServerTasks[0].endTime | dateBetween: buildCommit.ServerTasks[0].startTime }}
+                  {{ (buildCommit.ServerTasks[0].endTime | dateBetween: buildCommit.ServerTasks[0].startTime) }}
                 </span>
               </ng-container>
             </div>

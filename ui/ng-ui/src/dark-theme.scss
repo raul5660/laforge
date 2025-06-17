@@ -50,79 +50,79 @@ $dark-text-on-error: #000;
     color: $dark-text-on-surface-light !important;
   }
 
-  .mat-card {
+  .mat-mdc-card {
     background: $dark-surface-04 !important;
     color: $dark-text-on-surface !important;
 
-    .mat-card-subtitle {
+    .mat-mdc-card-subtitle {
       color: $dark-text-on-surface-lighter !important;
     }
   }
 
-  .mat-dialog-container {
+  .mat-mdc-dialog-container {
     background: $dark-surface-04 !important;
     color: $dark-text-on-surface !important;
   }
 
-  .mat-table {
+  .mat-mdc-table {
     background: $dark-surface-12 !important;
 
     mat-row,
     mat-header-row,
     mat-footer-row,
-    th.mat-header-cell,
-    td.mat-cell,
-    td.mat-footer-cell {
+    th.mat-mdc-header-cell,
+    td.mat-mdc-cell,
+    td.mat-mdc-footer-cell {
       border-bottom-color: $dark-surface-24 !important;
     }
 
-    .mat-header-cell {
+    .mat-mdc-header-cell {
       color: $dark-text-on-surface-lighter !important;
     }
 
-    .mat-cell,
-    .mat-footer-cell {
+    .mat-mdc-cell,
+    .mat-mdc-footer-cell {
       color: $dark-text-on-surface-light !important;
     }
   }
 
-  .mat-form-field-appearance-fill .mat-form-field-flex {
+  .mat-mdc-form-field .mat-mdc-form-field-flex {
     background-color: $dark-surface-24 !important;
     color: $dark-text-on-surface !important;
   }
 
-  .mat-select-value {
+  .mat-mdc-select-value {
     color: $dark-text-on-surface !important;
   }
 
-  .mat-form-field-label {
+  .mat-mdc-form-field-label {
     color: $dark-text-on-surface-lighter !important;
   }
 
-  .mat-select-panel {
+  .mat-mdc-select-panel {
     background: $dark-surface-24 !important;
   }
 
-  .mat-optgroup-label {
+  .mat-mdc-optgroup-label {
     color: $dark-text-on-surface-lighter !important;
   }
 
-  .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+  .mat-mdc-select-panel .mat-mdc-option.mat-mdc-option-selected:not(.mat-mdc-option-multiple) {
     background: $dark-primary !important;
   }
 
-  .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  .mat-primary .mat-mdc-option.mat-mdc-option-selected:not(.mat-mdc-option-disabled) {
     color: $dark-text-on-primary !important;
   }
 
-  .mat-option {
+  .mat-mdc-option {
     color: $dark-text-on-surface !important;
   }
 
-  .mat-slide-toggle-label {
+  .mat-mdc-slide-toggle-label {
     color: $dark-text-on-surface !important;
 
-    .mat-slide-toggle-bar {
+    .mat-mdc-slide-toggle-track {
       background-color: $dark-surface-24;
     }
   }
@@ -269,7 +269,7 @@ $dark-text-on-error: #000;
     color: $dark-text-on-surface !important;
   }
 
-  .mat-input-element::placeholder {
+  .mat-mdc-input-element::placeholder {
     color: $dark-text-on-surface-lighter !important;
   }
 
@@ -308,18 +308,18 @@ $dark-text-on-error: #000;
     color: $dark-text-on-surface-lighter !important;
   }
 
-  .mat-button.mat-primary.mat-button-disabled,
-  .mat-button.mat-accent.mat-button-disabled,
-  .mat-button.mat-warn.mat-button-disabled,
-  .mat-button.mat-button-disabled.mat-button-disabled,
-  .mat-icon-button.mat-primary.mat-button-disabled,
-  .mat-icon-button.mat-accent.mat-button-disabled,
-  .mat-icon-button.mat-warn.mat-button-disabled,
-  .mat-icon-button.mat-button-disabled.mat-button-disabled,
-  .mat-stroked-button.mat-primary.mat-button-disabled,
-  .mat-stroked-button.mat-accent.mat-button-disabled,
-  .mat-stroked-button.mat-warn.mat-button-disabled,
-  .mat-stroked-button.mat-button-disabled.mat-button-disabled {
+  .mat-mdc-button.mat-primary.mat-mdc-button-disabled,
+  .mat-mdc-button.mat-accent.mat-mdc-button-disabled,
+  .mat-mdc-button.mat-warn.mat-mdc-button-disabled,
+  .mat-mdc-button.mat-mdc-button-disabled.mat-mdc-button-disabled,
+  .mat-mdc-icon-button.mat-primary.mat-mdc-button-disabled,
+  .mat-mdc-icon-button.mat-accent.mat-mdc-button-disabled,
+  .mat-mdc-icon-button.mat-warn.mat-mdc-button-disabled,
+  .mat-mdc-icon-button.mat-mdc-button-disabled.mat-mdc-button-disabled,
+  .mat-mdc-outlined-button.mat-primary.mat-mdc-button-disabled,
+  .mat-mdc-outlined-button.mat-accent.mat-mdc-button-disabled,
+  .mat-mdc-outlined-button.mat-warn.mat-mdc-button-disabled,
+  .mat-mdc-outlined-button.mat-mdc-button-disabled.mat-mdc-button-disabled {
     color: $dark-text-on-surface-lighter !important;
   }
 
@@ -331,7 +331,7 @@ $dark-text-on-error: #000;
     box-shadow: 0 0 4px 2px $dark-background !important;
   }
 
-  .mat-flat-button.mat-link {
+  .mat-mdc-unelevated-button.mat-link {
     background-color: transparent !important;
     color: white !important;
   }

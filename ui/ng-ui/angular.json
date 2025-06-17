@@ -31,9 +31,9 @@
             ],
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": ["zone.js", "src/polyfills.ts"],
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
+
             "assets": [
               "src/favicon.ico",
               "src/assets",
@@ -94,9 +94,9 @@
               ],
               "index": "src/index.html",
               "main": "src/main.ts",
-              "polyfills": "src/polyfills.ts",
+              "polyfills": ["zone.js", "src/polyfills.ts"],
               "tsConfig": "tsconfig.app.json",
-              "aot": true,
+  
               "assets": [
                 "src/favicon.ico",
                 "src/assets",
@@ -141,7 +141,7 @@
 
           "options": {
             "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": ["zone.js", "src/polyfills.ts"],
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
@@ -184,7 +184,7 @@
       }
     }
   },
-  "defaultProject": "laforge",
+
   "cli": {
     "analytics": false
   }

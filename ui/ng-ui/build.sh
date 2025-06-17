@@ -2,7 +2,11 @@
 
 # Fix Apollo Client type errors by patching the problematic files
 export NG_CLI_ANALYTICS="false"
-export NODE_OPTIONS="--openssl-legacy-provider --max-old-space-size=4096"
+export NODE_OPTIONS="--max-old-space-size=4096"
+
+# Print Node and NPM versions for debugging
+node --version
+npm --version
 
 # Patch the Apollo Client types file that's causing issues
 APOLLO_CLIENT_TYPES="node_modules/@apollo/client/masking/internal/types.d.ts"
@@ -26,7 +30,8 @@ EOL
   echo "Apollo Client types replaced successfully."
 fi
 
-# For Angular 15, we keep the standard polyfills.ts file
+# For Angular 17, ensure browser support configuration is properly set
 
 # This will run Angular build with production configuration
+echo "Starting Angular 17 production build..."
 node_modules/.bin/ng build --configuration production

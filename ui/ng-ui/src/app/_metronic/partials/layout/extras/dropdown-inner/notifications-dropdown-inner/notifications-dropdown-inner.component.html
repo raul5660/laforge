@@ -37,7 +37,7 @@
           <div class="font-weight-bold">{{ getMessage(task) }}</div>
           <div class="text-muted">
             {{ task.endTime || task.startTime | dateAgo }}
-            <span *ngIf="task.endTime">, took {{ task.endTime | dateBetween: task.startTime }}</span>
+            <span *ngIf="task.endTime">, took {{ (task.endTime | dateBetween: task.startTime) }}</span>
           </div>
         </div>
       </div>

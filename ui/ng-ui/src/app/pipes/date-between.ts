@@ -5,11 +5,12 @@ import { Pipe, PipeTransform } from '@angular/core';
   pure: true
 })
 export class DateBetweenPipe implements PipeTransform {
-  transform(firstDate: any, secondDate: any): any {
+  transform(firstDate: any, secondDate: any): string {
     if (firstDate && secondDate) {
-      let seconds = Math.floor((+new Date(secondDate) - +new Date(firstDate)) / 1000);
+      let seconds = Math.floor((+new Date(firstDate) - +new Date(secondDate)) / 1000);
       if (seconds < 0) {
-        seconds = Math.floor((+new Date(firstDate) - +new Date(secondDate)) / 1000);
+        // Ensure absolute difference
+        seconds = Math.abs(seconds);
       }
       // if (seconds < 29)
       //   // less than 30 seconds ago will show as 'Just now'
@@ -34,6 +35,6 @@ export class DateBetweenPipe implements PipeTransform {
           }
       }
     }
-    return firstDate;
+    return '';
   }
 }
