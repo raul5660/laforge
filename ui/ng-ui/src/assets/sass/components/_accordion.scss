@@ -136,20 +136,21 @@
 			.card-title {
 				background-color: $gray-100;
 
-				@include border-radius($border-radius);
-				@include border-bottom-left-radius(0);
-				@include border-bottom-right-radius(0);
+				border-top-left-radius: 0.375rem;
+				border-top-right-radius: 0.375rem;
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
 
 				&.collapsed {
-					@include border-radius($border-radius);
+					border-radius: 0.375rem;
 				}
 			}
 		}
 
 		.card-body {
 			border: 1px solid $gray-100;
-			@include border-bottom-left-radius($border-radius);
-			@include border-bottom-right-radius($border-radius);
+			border-bottom-left-radius: $border-radius;
+			border-bottom-right-radius: $border-radius;
 		}
 
 		margin-bottom: 1.25rem;
@@ -255,19 +256,19 @@
 // Panel
 .accordion.accordion-panel {
 	.card {
-		@include border-radius($border-radius);
+		border-radius: $border-radius;
 
 		.card-header {
 			.card-title {
 				background-color: #fff;
-				@include border-radius($border-radius);
+				border-radius: $border-radius;
 			}
 		}
 
 		.card-body {
 			padding-top: 0;
 			border: 0;
-			@include border-radius($border-radius);
+			border-radius: $border-radius;
 		}
 	}
 }

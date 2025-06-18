@@ -346,15 +346,15 @@
 
 			&:first-child {
 				.nav-link {
-					@include border-top-left-radius($rounded-pill);
-					@include border-bottom-left-radius($rounded-pill);
+					border-top-left-radius: 50rem; // Bootstrap 5 pill value
+					border-bottom-left-radius: 50rem; // Bootstrap 5 pill value
 				}
 			}
 
 			&:last-child {
 				.nav-link {
-					@include border-top-right-radius($rounded-pill);
-					@include border-bottom-right-radius($rounded-pill);
+					border-top-right-radius: 50rem; // Bootstrap 5 pill value
+					border-bottom-right-radius: 50rem; // Bootstrap 5 pill value
 				}
 			}
 		}
@@ -363,15 +363,15 @@
 		&.nav-rounded {
 			&:first-child {
 				.nav-link {
-					@include border-top-left-radius($border-radius);
-					@include border-bottom-left-radius($border-radius);
+					border-top-left-radius: $border-radius;
+					border-bottom-left-radius: $border-radius;
 				}
 			}
 
 			&:last-child {
 				.nav-link {
-					@include border-top-right-radius($border-radius);
-					@include border-bottom-right-radius($border-radius);
+					border-top-right-radius: $border-radius;
+					border-bottom-right-radius: $border-radius;
 				}
 			}
 		}

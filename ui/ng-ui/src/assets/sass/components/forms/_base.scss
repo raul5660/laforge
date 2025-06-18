@@ -32,14 +32,14 @@
 
 	// Pill style
 	&.form-control-pill {
-		border-radius: $input-line-height;
+		border-radius: 50rem; // Using pill value for Bootstrap 5
 
 		&.form-control-sm {
-			border-radius: $input-line-height-sm;
+			border-radius: 50rem; // Using pill value for Bootstrap 5
 		}
 
 		&.form-control-lg {
-			border-radius: $input-line-height-lg;
+			border-radius: 50rem; // Using pill value for Bootstrap 5
 		}
 	}
 

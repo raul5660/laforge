@@ -10,7 +10,10 @@
 @import 'init';
 
 // 2: Bootstrap framework includes
+// Using Bootstrap 5's structure
 @import 'bootstrap/scss/bootstrap';
+// Compatibility layer for Bootstrap 4 to Bootstrap 5 migration
+@import 'bootstrap-compatibility';
 @import 'vendors/angular/material/angular-material';
 @import 'vendors/angular/material/include';
 
