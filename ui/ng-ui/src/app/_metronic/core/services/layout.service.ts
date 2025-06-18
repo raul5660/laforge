@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { BehaviorSubject } from 'rxjs';
 import { DefaultLayoutConfig } from '../../configs/default-layout.config';
-import * as objectPath from 'object-path';
 
 const LAYOUT_CONFIG_LOCAL_STORAGE_KEY = `${environment.appVersion}-layoutConfig`;
 
@@ -88,8 +87,26 @@ export class LayoutService {
     document.location.reload();
   }
 
+  /**
+   * Safely gets a nested property from an object using a string path
+   * Replaces object-path library with native JavaScript
+   */
   getProp(path: string): any {
-    return objectPath.get(this.layoutConfigSubject.value, path);
+    if (!path || !this.layoutConfigSubject.value) {
+      return undefined;
+    }
+    
+    const pathParts = path.split('.');
+    let result = this.layoutConfigSubject.value;
+    
+    for (const part of pathParts) {
+      if (result === null || result === undefined || typeof result !== 'object') {
+        return undefined;
+      }
+      result = result[part];
+    }
+    
+    return result;
   }
 
   setCSSClass(path: string, classesInStr: string) {

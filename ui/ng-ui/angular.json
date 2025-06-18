@@ -20,7 +20,6 @@
           "options": {
             "outputPath": "dist",
             "allowedCommonJsDependencies": [
-              "object-path",
               "apexcharts",
               "clipboard.js",
               "highlight.js",
